@@ -1,0 +1,147 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-rw-blue: var(--rw-blue);
+  --color-rw-yellow: var(--rw-yellow);
+  --color-rw-green: var(--rw-green);
+  --color-deep: var(--deep);
+  --color-deep-foreground: var(--deep-foreground);
+  --color-sky-wash: var(--sky-wash);
+  --color-leaf-wash: var(--leaf-wash);
+  --color-sun-wash: var(--sun-wash);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.875rem;
+  /* Rwanda flag palette */
+  --rw-blue: oklch(0.66 0.14 232);      /* #00A1DE */
+  --rw-yellow: oklch(0.87 0.18 95);     /* #FAD201 */
+  --rw-green: oklch(0.43 0.08 155);     /* #20603D */
+  --deep: oklch(0.33 0.09 245);         /* #073B66 */
+  --deep-foreground: oklch(0.99 0 0);
+  --sky-wash: oklch(0.97 0.02 225);     /* #EAF7FC */
+  --leaf-wash: oklch(0.97 0.015 150);   /* #EFF8F1 */
+  --sun-wash: oklch(0.97 0.05 98);
+
+  --background: oklch(0.995 0.003 220);
+  --foreground: oklch(0.31 0.035 250);  /* #243447 */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.31 0.035 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.31 0.035 250);
+  --primary: var(--rw-green);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: var(--sky-wash);
+  --secondary-foreground: var(--deep);
+  --muted: oklch(0.965 0.008 220);
+  --muted-foreground: oklch(0.5 0.03 245);
+  --accent: var(--rw-yellow);
+  --accent-foreground: var(--deep);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.91 0.015 230);
+  --input: oklch(0.91 0.015 230);
+  --ring: var(--rw-blue);
+  --chart-1: var(--rw-green);
+  --chart-2: var(--rw-blue);
+  --chart-3: oklch(0.78 0.16 90);
+  --chart-4: var(--deep);
+  --chart-5: oklch(0.6 0.1 160);
+
+  --shadow-card: 0 1px 2px oklch(0.33 0.09 245 / 6%), 0 8px 24px -12px oklch(0.33 0.09 245 / 18%);
+  --shadow-lift: 0 18px 40px -18px oklch(0.33 0.09 245 / 35%);
+
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3 { font-family: var(--font-display); color: var(--deep); letter-spacing: -0.015em; }
+  :focus-visible { outline: 3px solid var(--rw-blue); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+@utility shadow-card { box-shadow: var(--shadow-card); }
+@utility shadow-lift { box-shadow: var(--shadow-lift); }
+
+@utility flag-stripe {
+  background: linear-gradient(90deg, var(--rw-blue) 0 50%, var(--rw-yellow) 50% 75%, var(--rw-green) 75% 100%);
+}
+
+@utility terrace-pattern {
+  background-image: repeating-radial-gradient(ellipse at 50% 140%, transparent 0 22px, oklch(0.43 0.08 155 / 7%) 22px 24px);
+}
+
+@utility hero-scrim {
+  background: linear-gradient(100deg, oklch(0.25 0.07 245 / 92%) 0%, oklch(0.25 0.07 245 / 70%) 45%, oklch(0.25 0.07 245 / 10%) 100%);
+}
+
+@utility sun-drift {
+  animation: sun-drift 14s ease-in-out infinite alternate;
+}
+
+@keyframes sun-drift {
+  from { transform: translate(0, 0) scale(1); opacity: 0.55; }
+  to { transform: translate(-40px, 30px) scale(1.12); opacity: 0.8; }
+}
