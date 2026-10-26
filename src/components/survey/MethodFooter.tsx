@@ -40,8 +40,11 @@ export function Footer() {
       <div className="flag-stripe h-1.5" />
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-3 md:px-8">
         <div>
-          {/* Official NISR logo slot — use only with authorisation. */}
-          <span className="rounded-md bg-rw-yellow px-2 py-1 font-display text-sm font-bold text-deep">NISR</span>
+          <img
+            src="/nisr-logo.png"
+            alt="NISR logo"
+            className="h-14 w-auto"
+          />
           <p className="mt-4 font-display text-2xl">Seasonal Agricultural Survey 2025</p>
           <p className="mt-2 text-sm text-deep-foreground/70">An interactive data-storytelling presentation based on the NISR report. Not an official NISR product and not endorsed by NISR.</p>
         </div>

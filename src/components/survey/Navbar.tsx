@@ -30,10 +30,15 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b bg-card/90 backdrop-blur">
       <div className="flag-stripe h-1" />
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8" aria-label="Main">
-        {/* Official NISR logo slot: replace this text block with an authorised logo asset if permission is obtained. */}
         <a href="#top" className="flex items-center gap-3">
-          <span className="rounded-md bg-deep px-2 py-1 font-display text-sm font-bold text-deep-foreground">NISR</span>
-          <span className="hidden text-sm font-semibold leading-tight text-deep sm:block">Seasonal Agricultural<br />Survey 2025</span>
+          <img
+            src="/nisr-logo.png"
+            alt="NISR logo"
+            className="h-12 w-auto"
+          />
+          <span className="hidden text-sm font-semibold leading-tight text-deep sm:block">
+            Seasonal Agricultural<br />Survey 2025
+          </span>
         </a>
         <ul className="hidden items-center gap-1 lg:flex">
           {NAV.map((n) => (

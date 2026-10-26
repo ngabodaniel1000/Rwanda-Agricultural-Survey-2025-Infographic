@@ -40,7 +40,7 @@ export function LandUseSection() {
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-1">
             {LAND_USE.map((l, i) => (
-              <Reveal key={l.id} delay={i * 0.06} className="rounded-2xl border-l-4 border-l-rw-green bg-leaf-wash p-4">
+              <Reveal key={l.id} delay={i * 0.06} className="rounded-2xl bg-leaf-wash p-4">
                 <p className="font-semibold text-deep">{l.name}</p>
                 <p className="mt-1 text-sm">A: <strong>{formatMillionHa(l.values.A)}</strong> · B: <strong>{formatMillionHa(l.values.B)}</strong></p>
                 <p className="mt-1 text-xs text-muted-foreground">{l.definition}</p>
